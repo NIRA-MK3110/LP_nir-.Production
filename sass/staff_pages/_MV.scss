@@ -4,18 +4,17 @@
 
 // _MV.scss
 // メインビジュアルセクションのスタイリングを定義します。
-
 .mainvisual {
     position: relative;
     width: 100%;
     overflow: hidden;
-    color: $white; // テキストカラーを白に統一
+    color: $white;
 
     &__image {
         width: 100%;
         height: auto;
         display: block;
-        object-fit: cover; // 画像がコンテナをカバーするように調整
+        object-fit: cover;
     }
 
     &__content {
@@ -24,60 +23,84 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        width: 100%;
-        padding: $space-md;
+        width: 90%;
+        padding: $space-xs;
 
         @include mq("xs") {
-            padding: $space-sm;
+            top: 50%;
+            width: 85%;
+            padding: $space-xs * 0.6;
         }
     }
 
     &__article {
         display: inline-block;
-        background-color: rgba(0, 0, 0, 0.7); // 背景をやや濃くしてコントラストを上げる
-        border-radius: $border-radius;
-        padding: $space-md;
-        max-width: 90%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: $border-radius * 0.9;
+        padding: $space-xs;
+        max-width: 85%;
 
         @include mq("xs") {
-            padding: $space-sm;
+            padding: $space-xs * 0.6;
+            max-width: 80%;
         }
     }
 
     &__subtitle-container {
-        margin-bottom: $space-sm;
+        margin-bottom: $space-xs;
+
+        @include mq("xs") {
+            margin-bottom: $space-xs * 0.6;
+        }
     }
 
     &__subtitle {
         &--jp {
             font-family: $font-jp-title;
-            font-size: $font-size-h2;
-            margin-bottom: $space-xs;
-            text-shadow: $text-shadow-hard; // テキストシャドウを強くしてコントラストを上げる
+            font-size: $font-size-h2 * 0.7;
+            margin-bottom: $space-xs * 0.6;
+            text-shadow: $text-shadow-hard;
+
+            @include mq("xs") {
+                font-size: $font-size-h2-mobile * 0.7;
+            }
         }
 
         &--en {
             font-family: $font-en-title;
-            font-size: $font-size-h3;
-            letter-spacing: $letter-spacing-wide; // 英語のサブタイトルにレタースペーシングを追加
-            text-transform: uppercase; // 英語のサブタイトルを大文字に
-            text-shadow: $text-shadow-hard; // テキストシャドウを強くしてコントラストを上げる
+            font-size: $font-size-h3 * 0.7;
+            letter-spacing: $letter-spacing-wide * 0.85;
+            text-transform: uppercase;
+            text-shadow: $text-shadow-hard;
+
+            @include mq("xs") {
+                font-size: $font-size-h3-mobile * 0.7;
+            }
         }
     }
+
 
     &__text {
         &--jp {
             font-family: $font-jp-body;
-            font-size: $font-size-md;
-            margin-bottom: $space-xs;
-            text-shadow: $text-shadow-medium; // テキストシャドウを中くらいにしてコントラストを上げる
+            font-size: $font-size-md * 0.85;
+            margin-bottom: $space-xs * 0.7;
+            text-shadow: $text-shadow-medium;
+
+            @include mq("xs") {
+                font-size: $font-size-sm * 0.85;
+            }
         }
 
         &--en {
             font-family: $font-en-body;
-            font-size: $font-size-sm;
-            margin-bottom: $space-xs;
-            text-shadow: $text-shadow-medium; // テキストシャドウを中くらいにしてコントラストを上げる
+            font-size: $font-size-sm * 0.85;
+            margin-bottom: $space-xs * 0.7;
+            text-shadow: $text-shadow-medium;
+
+            @include mq("xs") {
+                font-size: $font-size-xs * 1.05;
+            }
         }
     }
 }
