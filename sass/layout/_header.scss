@@ -1,0 +1,116 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+
+// _header.scss
+// ヘッダーコンポーネントのスタイルを定義します。
+.header {
+    // Structure
+    position: relative;
+    z-index: 1000;
+    padding: $space-md $space-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // Appearance
+    background-color: $white;
+    color: $text-black;
+    text-shadow: $text-shadow-light;
+
+    // Responsive
+    @include mq("xs") {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    // Background Gradient
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        transform: translateX(-50%);
+        background-image: linear-gradient(135deg, $white, $primary-blue);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        // // この clip-path の値 polygon(0 0, 100% 0, 100% 75%, 0 100%) は、
+        // 4つの点を定義しており、それぞれがポリゴンの頂点を表しています。
+        // 値は (x y) のペアで、左から右に頂点を定義します。
+        z-index: -1;
+    }
+}
+
+// 企業ロゴとタイトルのスタイル
+.company__title {
+    // Structure
+    display: flex;
+    align-items: center;
+
+    // Responsive
+    @include mq("xs") {
+        flex-direction: column;
+    }
+}
+
+// 企業ロゴのスタイル
+.company__logo {
+    // Structure
+    max-width: 200px;
+    margin-right: $space-md;
+
+    // Transitions
+    transition: transform $transition-speed $transition-easing;
+
+    // Interaction
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    // Responsive
+    @include mq("xs") {
+        margin-right: 0;
+        margin-bottom: $space-xs;
+    }
+}
+
+// 企業名のスタイル
+.company__name {
+    // Appearance
+    font-family: $font-jp-title;
+    font-size: $font-size-h1;
+    color: $dark-blue;
+    margin-left: $space-md;
+
+    // Responsive
+    @include mq("xs") {
+        margin-left: 0;
+        margin-bottom: $space-xs;
+        font-size: $font-size-h1-mobile;
+    }
+}
+
+// CTAボタンのスタイル調整
+.header__cta-button {
+    // Appearance
+    color: $cta-hover-text-white;
+    background-image: linear-gradient(to right, darken($cta-primary-blue, 10%), $exploration-light-blue);
+
+    // Interaction
+    &:hover,
+    &:focus {
+        background-image: linear-gradient(to right, darken($cta-primary-blue, 15%), $bougainvillea);
+    }
+
+    &:active {
+        background-image: linear-gradient(to right, darken($cta-primary-blue, 20%), darken($exploration-light-blue, 20%));
+    }
+
+    // Accessibility
+    &:focus-visible {
+        outline: 3px solid $cta-hover-light-blue;
+        outline-offset: 2px;
+    }
+}

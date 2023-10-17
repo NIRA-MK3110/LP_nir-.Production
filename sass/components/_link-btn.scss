@@ -1,0 +1,101 @@
+@use "../base/colors" as *;
+@use "../abstracts/media-query" as *;
+@use "../base/typography" as *;
+@use "../base/layout-spacing" as *;
+@use "../base/animations" as *;
+
+// _link-button.scss
+// ベーススタイル
+.link-btn {
+    display: inline-block;
+    padding: $space-sm $space-md;
+    border-radius: $border-radius;
+    text-decoration: none;
+    font-family: $font-en-cta;
+    font-size: $font-size-md;
+    text-align: center;
+    transition:
+        color $transition-speed $transition-easing,
+        background-color $transition-speed $transition-easing,
+        transform $hover-animation-time $transition-easing;
+
+    // モディファイア: プライマリー
+    &--primary {
+        background-color: $cta-primary-blue;
+        color: $cta-hover-text-white;
+
+        &:hover,
+        &:focus {
+            background-color: $cta-hover-light-blue;
+        }
+
+        &:active {
+            background-color: $cta-active-dark-blue;
+        }
+
+        &:disabled {
+            background-color: $cta-disabled-gray;
+            color: $cta-disabled-text-gray;
+            cursor: not-allowed;
+        }
+    }
+
+    // モディファイア: セカンダリー
+    &--secondary {
+        background-color: $white;
+        color: $cta-primary-blue;
+        border: $border-width solid $cta-primary-blue;
+
+        &:hover,
+        &:focus {
+            color: $cta-hover-text-white;
+            background-color: $cta-hover-light-blue;
+        }
+    }
+
+    // モディファイア: アイコン付き
+    &--icon {
+        display: flex;
+        align-items: center;
+        gap: $space-xs;
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+
+            @include mq("xs") {
+                width: 0.75em;
+                height: 0.75em;
+            }
+        }
+    }
+}
+
+// アンダーラインリンク
+// 以下でアンダーラインリンクの基本スタイルを定義します。
+.underline-link {
+    position: relative;
+    display: inline-block;
+    color: $primary-blue;
+    text-decoration: none;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $dark-blue;
+        transition: transform $transition-speed ease-in-out;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
+
+    &:hover:after,
+    &:focus:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}

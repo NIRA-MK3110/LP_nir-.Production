@@ -1,0 +1,32 @@
+@use 'colors' as*;
+
+// _base.scss
+// 基本的なリセットとボディのスタイリングを定義します。
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; // レスポンシブフォントサイズの基準を設定
+}
+
+body {
+    background-color: $white;
+    color: $text-black;
+}
+
+a {
+    color: $text-black;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+li {
+    list-style: none;
+}

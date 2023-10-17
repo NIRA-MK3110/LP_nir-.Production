@@ -1,0 +1,60 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../components" as *;
+
+// _teamwork.scss
+.teamwork {
+    padding: $space-lg 0;
+    max-width: 960px;
+
+    header.title {
+        margin-bottom: $space-md;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $space-md;
+
+        @include mq("lg") {
+            flex-direction: row;
+            gap: $space-lg;
+        }
+    }
+
+    .text {
+        max-width: 600px;
+        text-align: center;
+
+        section.subtitle {
+            margin-bottom: $space-sm;
+        }
+
+        p.description--jp,
+        p.description--en {
+            margin-bottom: $space-sm;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .images {
+        width: 100%;
+        max-width: 600px;
+
+        .image {
+            width: 100%;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow-light;
+        }
+    }
+    .link-btn {
+        @include mq("xs") {
+            font-size: $font-size-sm;
+            padding: $space-xs $space-sm;
+        }
+    }
+}

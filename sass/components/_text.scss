@@ -1,0 +1,69 @@
+@use "../base/colors" as *;
+@use "../abstracts/media-query" as *;
+@use "../base/typography" as *;
+@use "../base/layout-spacing" as *;
+@use "../base/animations" as *;
+
+
+// _text.scss
+// テキストのスタイリングを定義します。
+// これには、日本語と英語のテキストのスタイルが含まれます。
+.text {
+    &--jp {
+        font-family: $font-jp-body;
+        font-size: $font-size-body;
+        color: $text-black;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        margin-top: $space-md;
+
+        // Responsive
+        @include mq("xs") {
+            font-size: $font-size-sm;
+        }
+    }
+
+    &--en {
+        font-family: $font-en-body;
+        font-size: $font-size-body;
+        color: $text-black;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        margin-bottom: $space-md;
+
+        // Responsive
+        @include mq("xs") {
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+.description{
+    &--jp {
+        font-family: $font-jp-body;
+        font-size: $font-size-body;
+        color: $text-black;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        margin-top: $space-md;
+
+        // Responsive
+        @include mq("xs") {
+            font-size: $font-size-sm;
+        }
+    }
+
+    &--en {
+        font-family: $font-en-body;
+        font-size: $font-size-body;
+        color: $text-black;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        margin-bottom: $space-md;
+
+        // Responsive
+        @include mq("xs") {
+            font-size: $font-size-sm;
+        }
+    }
+}

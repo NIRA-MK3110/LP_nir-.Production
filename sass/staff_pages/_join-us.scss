@@ -1,0 +1,25 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../components" as *;
+
+.join-us {
+    .join-us__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $space-md;
+
+        .join-us__description {
+            font-family: $font-jp-body;
+            font-size: $font-size-sm;
+            color: $text-black;
+            text-align: center;
+        }
+
+        .button {
+            @include mq("xs") {
+                width: 100%;
+            }
+        }
+    }
+}

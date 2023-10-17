@@ -1,0 +1,61 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../components" as *;
+
+// _staff-list.scss
+
+.staff-list {
+  padding: $space-md;
+  max-width: 960px;
+
+  .title {
+      margin-bottom: $space-lg;
+
+      h1, h2 {
+          margin-bottom: $space-sm;
+      }
+  }
+
+  .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-md;
+
+      .container {
+          flex-basis: calc(50% - #{$space-md});
+          background-color: $white;
+          padding: $space-md;
+          border-radius: $border-radius;
+          box-shadow: $box-shadow-light;
+          transition: box-shadow $transition-speed $transition-easing,
+                      transform $hover-animation-time $transition-easing;
+
+          &:hover {
+              box-shadow: $box-shadow-medium;
+              transform: translateY(-0.5rem);
+          }
+
+          img.staff__photo {
+              width: 100%;
+              border-top-left-radius: $border-radius;
+              border-top-right-radius: $border-radius;
+          }
+
+          h4,
+          p {
+              margin-bottom: $space-sm;
+          }
+
+          a.link-btn {
+              margin-top: $space-sm;
+              margin-bottom: $space-md;
+          }
+      }
+  }
+
+  @include mq("xs") {
+      .grid .container {
+          flex-basis: 100%;
+      }
+  }
+}

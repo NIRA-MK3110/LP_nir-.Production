@@ -1,0 +1,13 @@
+//_media-query.scss
+$breakpoints: (
+    // 600px以下 スマートフォン
+    "xs": "(max-width: 600px)",
+    // 601px以上 タブレット/pc
+    "lg": "(min-width: 601px)"
+);
+@mixin mq($breakpoint: "lg") {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+

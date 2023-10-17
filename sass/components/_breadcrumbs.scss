@@ -1,0 +1,58 @@
+@use "../base/colors" as *;
+@use "../abstracts/media-query" as *;
+@use "../base/typography" as *;
+@use "../base/layout-spacing" as *;
+@use "../base/animations" as *;
+
+// _breadcrumbs.scss
+.breadcrumbs {
+    font-family: $font-jp-body;
+    font-size: $font-size-sm;
+    color: $text-black;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: $space-md; // 上下左右の余白を追加
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        & + &::before {
+            content: ">";
+            margin: 0 $space-xs;
+            color: $limestone;
+
+            @include mq("lg") {
+                color: contrastColor($limestone);
+            }
+        }
+
+        &--active {
+            color: $dark-blue;
+            font-weight: bold;
+
+            @include mq("lg") {
+                color: contrastColor($dark-blue);
+            }
+        }
+    }
+
+    &__link {
+        color: $primary-blue;
+        text-decoration: none;
+        transition: color $transition-speed $transition-easing;
+        padding: $space-xs $space-sm; // リンクの上下左右の余白を追加
+
+        &:hover {
+            color: darken($primary-blue, 10%);
+        }
+
+        // アクセシビリティ: フォーカス時のスタイルを追加
+        &:focus {
+            outline: 2px solid $cta-primary-blue;
+            outline-offset: 2px;
+        }
+    }
+}

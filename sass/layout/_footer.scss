@@ -1,0 +1,87 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+
+// _footer.scss
+
+.footer {
+    // Structure
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $space-md $space-lg;
+    background-color: $primary-blue;
+    color: $white;
+
+    // Responsive: Adjust padding for smaller screens
+    @include mq("xs") {
+        padding: $space-md;
+    }
+
+    // Nested Components
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        gap: $space-md;
+
+        @include mq("xs") {
+            gap: $space-sm;
+        }
+    }
+
+    &__copyright,
+    &__nav,
+    &__social {
+        margin-bottom: $space-sm;
+        margin-top: $space-sm;
+
+
+        @include mq("xs") {
+            width: 100%;
+            text-align: center;
+            margin-bottom: $space-xs;
+        }
+    }
+
+    // Navigation Links
+    &__nav-list {
+        display: flex;
+        gap: $space-md;
+    }
+
+    // Navigation Items
+    &__nav-item a {
+        font-family: $font-jp-body;
+        font-size: $font-size-sm;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        color: $white;
+        text-decoration: none;
+        transition: color $transition-speed $transition-easing;
+
+        &:hover,
+        &:focus {
+            color: $light-blue;
+        }
+    }
+
+    // Social Links
+    &__social-link {
+        color: $white;
+        font-family: $font-en-body;
+        font-size: $font-size-sm;
+        line-height: $line-height-normal;
+        letter-spacing: $letter-spacing-normal;
+        transition: color $transition-speed $transition-easing;
+
+        &:hover,
+        &:focus {
+            color: $light-blue;
+        }
+    }
+}

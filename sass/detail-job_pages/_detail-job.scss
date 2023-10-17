@@ -1,0 +1,86 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../components" as *;
+
+// _staff-detail.scss
+// スタッフ詳細セクションのスタイリングを提供します。
+// このセクションは、スタッフが行っている仕事内容の詳細情報を表示します。
+
+.staff-detail {
+  padding: $space-lg 0;
+  max-width: 960px;
+  margin: 0 auto; // センタリングのために追加
+
+  // Header Styles
+  &__header {
+    margin-bottom: $space-md;
+  }
+
+  // Title Styles
+  &__title {
+    // 日本語タイトルスタイル
+    &--jp {
+      font-size: $font-size-h1;
+    }
+
+    // 英語タイトルスタイル
+    &--en {
+      font-size: $font-size-h2;
+    }
+  }
+
+  // Slider Styles
+  .slider {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    // Slider Inner Styles
+    .slider-inner {
+      width: 300%;
+      animation: slider 10s infinite ease;
+    }
+
+    // Slider Item Styles
+    .slider-item {
+      width: 300px;
+      float: left;
+
+      // Image Styles
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  // Columns Styles
+  .columns {
+    border-bottom: 2px solid $limestone;
+    padding: $space-lg 0;
+    margin-bottom: $space-lg;
+
+    // Column Item Styles
+    .column-item {
+      border-right: 2px solid $limestone;
+      padding: 0 $space-md;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+// Slider Animation
+@keyframes slider {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-300px);
+  }
+  66% {
+    transform: translateX(-600px);
+  }
+}

@@ -1,0 +1,116 @@
+@use "../base/colors" as *;
+@use "../abstracts/media-query" as *;
+@use "../base/typography" as *;
+@use "../base/layout-spacing" as *;
+@use "../base/animations" as *;
+
+// _cta-button.scss
+// CTA (Call to Action) ボタンのスタイリングを定義します。
+// ベーススタイル
+.cta-button {
+    display: inline-block;
+    padding: $space-sm $space-md;
+    font-family: $font-en-cta;
+    font-size: $font-size-lg;
+    text-align: center;
+    text-decoration: none;
+    border-radius: $border-radius;
+    background-image: linear-gradient(to right, $cta-primary-blue, $exploration-light-blue);
+    color: $cta-hover-text-white;
+    transition:
+        color $transition-speed $transition-easing,
+        background-color $transition-speed $transition-easing,
+        transform $hover-animation-time $transition-easing;
+
+    // 状態: ホバーとフォーカス
+    &:hover,
+    &:focus {
+        background-image: linear-gradient(to right, darken($cta-primary-blue, 10%), $bougainvillea);
+        transform: translateY(-2px);
+    }
+
+    // 状態: アクティブ
+    &:active {
+        background-image: linear-gradient(to right, darken($cta-primary-blue, 20%), darken($exploration-light-blue, 20%));
+        transform: translateY(0);
+    }
+
+    // 状態: 無効
+    &:disabled {
+        background-color: $cta-disabled-gray;
+        background-image: none;
+        color: $cta-disabled-text-gray;
+        cursor: not-allowed;
+    }
+}
+
+// プライマリーCTA
+.cta-button--primary {
+    background-color: $cta-primary-blue;
+    color: $cta-hover-text-white;
+    border: 2px solid transparent;
+
+    &:hover,
+    &:focus {
+        background-color: $bougainvillea;
+        border-color: $bougainvillea;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: $cta-active-dark-blue;
+        border-color: $cta-active-dark-blue;
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        background-color: $cta-disabled-gray;
+        color: $cta-disabled-text-gray;
+        cursor: not-allowed;
+    }
+}
+
+// セカンダリーCTA
+.cta-button--secondary {
+    background-color: transparent;
+    color: $cta-primary-blue;
+    border: 2px solid $cta-primary-blue;
+
+    &:hover,
+    &:focus {
+        color: $cta-hover-text-white;
+        background-color: $bougainvillea;
+        border-color: $bougainvillea;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: $cta-active-dark-blue;
+        border-color: $cta-active-dark-blue;
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        background-color: $cta-disabled-gray;
+        color: $cta-disabled-text-gray;
+        cursor: not-allowed;
+    }
+}
+
+// アイコン付きCTA
+.cta-button--icon {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+
+    .icon {
+        width: 1.5em;
+        height: 1.5em;
+        fill: $bougainvillea;
+
+        @include mq("xs") {
+            width: 1.25em;
+            height: 1.25em;
+        }
+    }
+}

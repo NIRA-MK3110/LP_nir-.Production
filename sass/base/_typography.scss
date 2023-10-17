@@ -1,0 +1,32 @@
+// _typography.scss
+// プロジェクトで使用するフォントサイズとフォントファミリーを定義します。
+
+// フォントサイズ
+$font-size-h1: 2.125rem;
+$font-size-h2: 1.825rem;
+$font-size-h3: 1.625rem;
+$font-size-h4: 1.425rem;
+$font-size-body: 1.125rem;
+
+// モバイルビューのフォントサイズ
+$font-size-h1-mobile: 1.75rem;
+$font-size-h2-mobile: 1.5rem;
+$font-size-h3-mobile: 1.25rem;
+
+// タイポグラフィ
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+
+// フォントファミリー
+$font-jp-title: 'Noto Sans JP', sans-serif;
+$font-en-title: 'Oswald', sans-serif;
+$font-jp-subtitle: 'M PLUS Rounded 1c', sans-serif;
+$font-en-subtitle: 'Roboto Condensed', sans-serif;
+$font-jp-body: 'Noto Sans JP', sans-serif;
+$font-en-body: 'Lato', sans-serif;
+$font-jp-cta: 'Noto Sans JP', sans-serif;
+$font-en-cta: 'Montserrat', sans-serif;

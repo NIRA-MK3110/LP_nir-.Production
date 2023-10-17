@@ -1,0 +1,31 @@
+// _colors.scss
+// プライマリーカラー
+$primary-blue: #0065B2; // 主要な青色
+$white: #FEFDFC; // 主要な白色
+$limestone: #E6EAEB; // 補助色
+$text-black: #24130D; // テキスト
+
+// アクセントカラー
+$light-blue: #B0E0E6; // 軽い青色
+$dark-blue: #000080; // 濃い青色
+$sky-blue: #87CEEB; // 空の青色
+$bougainvillea: #DC077F; // ブーゲンビリア色
+
+// CTAボタンカラー
+$cta-primary-blue: #004C99; // 主要なCTAボタンの背景カラー
+$cta-hover-light-blue: #0066CC; // CTAボタンホバー時の背景カラー
+$cta-hover-text-white: #FEFDFC; // CTAボタンのテキストカラー(ホバー時テキストカラーは変更しない)
+$cta-active-dark-blue: #003366; // CTAボタンがアクティブ時の背景カラー
+$cta-disabled-gray: #B0B0B0; // CTAボタンが非活性時の背景カラー
+$cta-disabled-text-gray: #707070; // CTAボタンが非活性時のテキストカラー
+
+// 新しいエラーと成功メッセージのカラー
+$error-red: #FF4757; // エラー表示用の赤色
+$success-green: #2ED573; // 成功表示用の緑色
+
+// 追加: コンセプトに基づいたカラー
+$hero-blue: #004477; // 英雄的な青色: WCAG AA準拠
+$visionary-white: #FFFFFF; // ビジョンを象徴する白色: WCAG AA準拠
+$exploration-light-blue: #B3E0FF; // 探求心を表すライトブルー: WCAG AA準拠
+$hover-exploration-blue: lighten($exploration-light-blue, 10%); // ホバー時の探求心を表す青色
+$active-exploration-blue: darken($exploration-light-blue, 10%); // アクティブ時の探求心を表す青色

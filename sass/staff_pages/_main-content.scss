@@ -1,0 +1,10 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "../components" as *;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: $space-md;
+}

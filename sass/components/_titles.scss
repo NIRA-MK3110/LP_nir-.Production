@@ -1,0 +1,64 @@
+@use "../base/colors" as *;
+@use "../abstracts/media-query" as *;
+@use "../base/typography" as *;
+@use "../base/layout-spacing" as *;
+@use "../base/animations" as *;
+
+// _titles.scss
+// タイトルとサブタイトルのスタイリングを定義します。
+// これには、日本語と英語のタイトル、サブタイトルのスタイルが含まれます。
+
+// タイトルのスタイル
+.title {
+    &--jp,
+    &--en {
+        margin-bottom: $space-md;
+        text-align: center;
+        text-shadow: $text-shadow-light;
+
+        @include mq("xs") {
+            font-size: $font-size-h1-mobile;
+        }
+    }
+
+    &--jp {
+        font-family: $font-jp-title;
+        color: $dark-blue;
+        background-color: $visionary-white;
+        padding: $space-xs;
+        border-radius: $border-radius;
+    }
+
+    &--en {
+        font-family: $font-en-title;
+        color: $dark-blue;
+        background-color: $visionary-white;
+        padding: $space-xs;
+        border-radius: $border-radius;
+    }
+}
+
+.subtitle {
+    &--jp,
+    &--en {
+        @include mq("xs") {
+            font-size: $font-size-h2-mobile;
+        }
+    }
+
+    &--jp {
+        font-family: $font-jp-subtitle;
+        color: $primary-blue;
+        background-color: $visionary-white;
+        padding: $space-xs;
+        border-radius: $border-radius;
+    }
+
+    &--en {
+        font-family: $font-en-subtitle;
+        color: $primary-blue;
+        background-color: $visionary-white;
+        padding: $space-xs;
+        border-radius: $border-radius;
+    }
+}

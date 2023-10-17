@@ -1,0 +1,38 @@
+// _animations.scss
+
+// トランジションのタイミング
+$transition-speed: 0.35s; // 一般的なトランジションの速度
+$transition-easing: cubic-bezier(0.4, 0.0, 0.2, 1); // トランジションのなめらかなイージング
+$fade-animation-time: 1.5s; // フェードインアニメーションの速度
+$hover-animation-time: 0.75s; // ホバー状態のトランジション速度
+$scroll-animation-time: 1.2s; // スクロールアニメーションの速度
+
+// フェードインアニメーション
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+// ホバーアニメーション
+@keyframes hoverAnimation {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+// スクロールアニメーション
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
